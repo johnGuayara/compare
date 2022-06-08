@@ -1,0 +1,58 @@
+const text1 = document.getElementById('texto1');
+const text2 = document.getElementById('texto2');
+const text3 = document.getElementById('texto3');
+const result= text1.localeCompare(text2);
+function comparador(){
+    function compare(){
+                let string1 = "world";
+                let string2 = "worl";
+                let result = string1.localeCompare(string2);
+                document.getElementById('test').innerHTML = result;
+            }
+   
+}
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparar</title>
+    
+</head>
+<body>
+    <textarea  id="texto1" cols="30" rows="10"></textarea>
+    <textarea  id="texto2" cols="30" rows="10"></textarea>
+
+    <button type="button" onclick="comparador()">Comparar</button>
+    <p id="test"></p>
+    <script >
+        let texto1 = document.getElementById('texto1');
+        let texto2 = document.getElementById('texto2');
+
+function comparador(){
+          if(texto1 == texto2){
+            let result = text1.localeCompare(text2);
+            document.getElementById('test').innerHTML = result; 
+          }
+}
+    </script>
+</body>
+</html>
+
+
+
+
+
+function compare(){
+    let string1 = document.getElementById('texto1');
+    let string2 = document.getElementById('texto2');
+    let result = string1.localComapare(string2);
+    document.getElementById('test').innerHTML = result;
+}
