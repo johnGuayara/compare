@@ -5,19 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comparar</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src=
+     "//ajax.googleapis.com/ajax/libs/angularjs/1.6.8/angular.min.js">
+     </script>
     
 </head >
-<body ng-app="app" ng controller="controller">
-    <textarea  ng-model="val1" ng-change="check()" cols="30" rows="10"></textarea>
-    <textarea  ng-model="val2" ng-change="check()" cols="30" rows="10"></textarea>
+<body ng-app="app" ng-controller="controller">
+    <textarea  ng-model="valor1" ng-change="review()" cols="30" rows="10" placeholder="Etiquetas de US"></textarea>
+    <textarea  ng-model="valor2" ng-change="review()" cols="30" rows="10" placeholder="Etiquetas de CO"></textarea>
+    <textarea  ng-model="valor3" ng-change="review()" cols="30" rows="10" placeholder="Etiquetas de BR"></textarea>
     <p>{{msg}}</p>
-
+    <p>{{errores}}</p>
+    
+    Texto 1: <pre>{{valor1 | json}}</pre>
+    Texto 2: <pre>{{valor2 | json}}</pre>
+    Texto 3: <pre>{{valor3 | json}}</pre>
 
     <script >
-      let app = angular.module('app',[]);
+      var app = angular.module("app",[]);
       app.controller('controller', function($scope){
-          
+          $scope.valor1 = '';
+          $scope.valor2 = '';
+          $scope.valor3 = '';
+          $scope.errores= "";
+          $scope.review = function () {
+            if(angular.equals($scope.valor1, $scope.valor2) && angular.equals($scope.valor2, $scope.valor3) && angular.equals($scope.valor1, $scope.valor3)){
+              $scope.msg = "Todo correcto";
+            }
+            else{
+              $scope.msg = "Hay un error"; 
+            }
+              
+          }
       });
     </script>
 </body>

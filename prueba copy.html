@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <title>JavaScript Optimum way to compare strings</title>
+</head>
+ 
+<body style="text-align:center;" id="body">
+    <h1 style="color:green;"> 
+            GeeksforGeeks 
+        </h1> String_1:
+    <textarea id="text1" name="tname1"></textarea>
+    <br>
+    <br> String_2:
+    <textarea id="text2" name="tname2"></textarea>
+    <br>
+    <br>
+    <button onclick="gfg_Run()"> Compare </button>
+    <p id="GFG_DOWN" style="color:green;
+              font-size: 20px;
+              font-weight: bold;"> </p>
+ 
+ 
+    <script>
+        var str1 = document.getElementById("text1");
+        var str2 = document.getElementById("text2");
+        var el_down = document.getElementById("GFG_DOWN");
+     
+        function gfg_Run() {
+            var a = str1.value;
+            var b = str2.value;
+            var ans = a.localeCompare(b);
+            var res = "";
+            if(ans == -1) {
+                res = '"' + a + '" comes before "' + b + '"';
+            } else if(ans == 0) {
+                res = 'Both string are same';
+            } else {
+                res = '"' + a + '" comes after "' + b + '"';
+            }
+            el_down.innerHTML = res;
+        }
+    </script>
+</body>
+ 
+</html>
